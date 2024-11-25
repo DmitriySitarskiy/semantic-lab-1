@@ -1,1 +1,1 @@
-# semantic-lab-1
+# semantic-web-lab-1

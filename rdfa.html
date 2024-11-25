@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Персональна сторінка</title>
+</head>
+<body>
+    <h1>Про мене</h1>
+    <p>Привіт! Мене звати Дмитро, і я живу в Києві.</p>
+
+    <!-- Microdata -->
+    <div itemscope itemtype="http://schema.org/Person">
+        <h2><span itemprop="name">Дмитро</span></h2>
+        <p>Місце проживання: <span itemprop="address">Київ</span></p>
+        <p>Знання: <span itemprop="knows">RDF</span></p>
+    </div>
+
+     <!-- JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "name": "Дмитро",
+            "address": "Київ",
+            "knows": "RDF"
+        }
+    </script>
+
+    <!-- RDFa -->
+    <div vocab="http://schema.org/" typeof="Person">
+        <h2 property="name">Дмитро</h2>
+        <p>Місце проживання: <span property="address">Київ</span></p>
+        <p>Знання: <span property="knows">RDF</span></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ex="http://example.org/">
+
+    <!-- Латунь – це сплав міді та цинку -->
+    <rdf:Description rdf:about="http://example.org/Brass">
+        <ex:hasComponent rdf:resource="http://example.org/Copper"/>
+        <ex:hasComponent rdf:resource="http://example.org/Zinc"/>
+    </rdf:Description>
+
+    <!-- SPIEGEL — німецький інформаційний журнал зі штаб-квартирою в Гамбурзі -->
+    <rdf:Description rdf:about="http://example.org/SPIEGEL">
+        <ex:type rdf:resource="http://example.org/InformationMagazine"/>
+        <ex:country rdf:resource="http://example.org/Germany"/>
+        <ex:headquarteredIn rdf:resource="http://example.org/Hamburg"/>
+    </rdf:Description>
+
+    <!-- Есе складається зі вступу, основної частини та висновку -->
+    <rdf:Description rdf:about="http://example.org/Essay">
+        <ex:hasPart rdf:resource="http://example.org/Introduction"/>
+        <ex:hasPart rdf:resource="http://example.org/Body"/>
+        <ex:hasPart rdf:resource="http://example.org/Conclusion"/>
+    </rdf:Description>
+
+    <!-- Павло знає, що Олена живе в Полтаві -->
+    <rdf:Description rdf:about="http://example.org/Pavlo">
+        <ex:knows>
+            <rdf:Description>
+                <ex:subject rdf:resource="http://example.org/Olena"/>
+                <ex:predicate rdf:resource="http://example.org/livesIn"/>
+                <ex:object rdf:resource="http://example.org/Poltava"/>
+            </rdf:Description>
+        </ex:knows>
+    </rdf:Description>
+
+    <!-- Олена каже, що її друг живе в Києві -->
+    <rdf:Description rdf:about="http://example.org/Olena">
+        <ex:says>
+            <rdf:Description>
+                <ex:subject rdf:resource="http://example.org/friend"/>
+                <ex:predicate rdf:resource="http://example.org/livesIn"/>
+                <ex:object rdf:resource="http://example.org/Kyiv"/>
+            </rdf:Description>
+        </ex:says>
+    </rdf:Description>
+
+    <!-- Стефан думає, що Анна знає, що він знає її батька -->
+    <rdf:Description rdf:about="http://example.org/Stefan">
+        <ex:thinks rdf:resource="http://example.org/statement1" />
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/statement1">
+        <ex:subject rdf:resource="http://example.org/Anna" />
+        <ex:predicate rdf:resource="http://example.org/knows" />
+        <ex:object rdf:resource="http://example.org/statement2" />
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://example.org/statement2">
+        <ex:subject rdf:resource="http://example.org/Stefan" />
+        <ex:predicate rdf:resource="http://example.org/knows" />
+        <ex:object rdf:resource="http://example.org/herFather" />
+    </rdf:Description>
+
+    <!-- Іван знає, що Рим є столицею Італії -->
+    <rdf:Description rdf:about="http://example.org/Ivan">
+        <ex:knows>
+            <rdf:Description>
+                <ex:subject rdf:resource="http://example.org/Rome"/>
+                <ex:predicate rdf:resource="http://example.org/isCapitalOf"/>
+                <ex:object rdf:resource="http://example.org/Italy"/>
+            </rdf:Description>
+        </ex:knows>
+    </rdf:Description>
+
+</rdf:RDF>
