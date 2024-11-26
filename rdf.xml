@@ -15,9 +15,13 @@
 
     <!-- Есе складається зі вступу, основної частини та висновку -->
     <rdf:Description rdf:about="http://example.org/Essay">
-        <ex:hasPart rdf:resource="http://example.org/Introduction"/>
-        <ex:hasPart rdf:resource="http://example.org/Body"/>
-        <ex:hasPart rdf:resource="http://example.org/Conclusion"/>
+        <ex:tableOfContents>
+            <rdf:Seq>
+                <rdf:_1 rdf:resource="http://example.org/Introduction"/>
+                <rdf:_2 rdf:resource="http://example.org/Body"/>
+                <rdf:_3 rdf:resource="http://example.org/Conclusion"/>        
+            </rdf:Seq>
+        </ex:tableOfContents> 
     </rdf:Description>
 
     <!-- Павло знає, що Олена живе в Полтаві -->
