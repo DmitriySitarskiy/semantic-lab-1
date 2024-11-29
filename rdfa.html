@@ -9,29 +9,62 @@
     <h1>Про мене</h1>
     <p>Привіт! Мене звати Дмитро, і я живу в Києві.</p>
 
-    <!-- Microdata -->
-    <div itemscope itemtype="http://schema.org/Person">
-        <h2><span itemprop="name">Дмитро</span></h2>
-        <p>Місце проживання: <span itemprop="address">Київ</span></p>
-        <p>Знання: <span itemprop="knows">RDF</span></p>
-    </div>
-
-     <!-- JSON-LD -->
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "Person",
-            "name": "Дмитро",
-            "address": "Київ",
-            "knows": "RDF"
-        }
-    </script>
-
     <!-- RDFa -->
     <div vocab="http://schema.org/" typeof="Person">
-        <h2 property="name">Дмитро</h2>
-        <p>Місце проживання: <span property="address">Київ</span></p>
-        <p>Знання: <span property="knows">RDF</span></p>
+        <h1 property="name">Дмитро</h1>
+        <p>Вік: <span property="age">22</span></p>
+        <p>Місце проживання: <span property="address">Київ, Україна</span></p>
+        <p>Професія: <span property="jobTitle">developer</span></p>
+        <p>Компанія: <span property="worksFor" typeof="Organization">
+            <span property="name">TechCorp</span>
+        </span></p>
+        <p>Контактний номер: <span property="telephone">+380937035540</span></p>
+        <p>Електронна пошта: <span property="email">ex@example.com</span></p>
+        <p>Соціальні мережі:</p>
+        <ul>
+            <li>Facebook: <span property="sameAs" content="https://www.facebook.com/dmytro">facebook.com/dmitro</span></li>
+            <li>Twitter: <span property="sameAs" content="https://twitter.com/dmytro">@dmitro</span></li>
+        </ul>
     </div>
+
+<!-- Microdata -->
+    <div itemscope itemtype="http://schema.org/Person">
+        <h1><span itemprop="name">Дмитро </span></h1>
+        <p>Вік: <span itemprop="age">22</span></p>
+        <p>Місце проживання: <span itemprop="address">Київ, Україна</span></p>
+        <p>Професія: <span itemprop="jobTitle">developer</span></p>
+        <p>Компанія: <span itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+            <span itemprop="name">TechCorp</span>
+        </span></p>
+        <p>Контактний номер: <span itemprop="telephone">+380937035540</span></p>
+        <p>Електронна пошта: <span itemprop="email">ex@example.com</span></p>
+        <p>Соціальні мережі:</p>
+        <ul>
+            <li>Facebook: <span itemprop="sameAs" content="https://www.facebook.com/dmitro">facebook.com/dmitro</span></li>
+            <li>Twitter: <span itemprop="sameAs" content="https://twitter.com/dmitro">@dmitro</span></li>
+        </ul>
+    </div>
+
+<!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Дмитро",
+      "age": 22,
+      "address": "Київ, Україна",
+      "jobTitle": "developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "TechCorp"
+      },
+      "telephone": "+380123456789",
+      "email": "ex@example.com",
+      "sameAs": [
+        "https://www.facebook.com/dmytro",
+        "https://twitter.com/dmytro"
+      ]
+    }
+    </script>
 </body>
 </html>
